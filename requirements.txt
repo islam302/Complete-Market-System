@@ -1,0 +1,4 @@
+django
+django-restframework
+djoser
+django-filer
