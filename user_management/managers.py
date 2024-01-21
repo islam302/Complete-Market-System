@@ -5,7 +5,7 @@ from django.db import models
 
 class UserManager(BaseUserManager):
 
-    def create_user(self, first_name: str, last_name: str, username: str, gender: str, mobile_number: int, date_of_birth: str, email: str, password=None, **extra_fields):
+    def create_user(self, first_name: str, last_name: str, username: str, gender: str, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
 
@@ -19,6 +19,7 @@ class UserManager(BaseUserManager):
 
         user.first_name = first_name
         user.last_name = last_name
+        user.gender = gender
         user.username = username
         user.set_password(password)
         user.is_active = True
